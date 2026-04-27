@@ -32,7 +32,6 @@ body {
     background: linear-gradient(135deg, #111, #1f2a22);
 }
 
-/* HERO IMAGE */
 .hero img {
     width: 100%;
     max-width: 520px;
@@ -42,7 +41,6 @@ body {
     box-shadow: 0 12px 45px rgba(124, 255, 178, 0.15);
 }
 
-/* HEADINGS */
 h1, h2, h3 {
     color: #7CFFB2;
     margin-top: 10px;
@@ -102,6 +100,22 @@ h1, h2, h3 {
     margin: 6px 0;
 }
 
+/* FORM */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 14px;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #7CFFB2;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
 
@@ -131,6 +145,7 @@ h1, h2, h3 {
 </head>
 
 <body>
+
 <div style="text-align:center; margin-bottom:15px; font-weight:bold;">
 
     🌍 Language:&nbsp;
@@ -146,6 +161,7 @@ h1, h2, h3 {
     </a>
 
 </div>
+
 <!-- HERO -->
 <div class="hero">
 
@@ -207,10 +223,6 @@ h1, h2, h3 {
 <div class="card" style="text-align:center;">
 <h2>🧬 Start Your 7-Day Longevity Reset</h2>
 
-<p>
-Includes full email challenge + complete longevity eBook (PDF guide)
-</p>
-
 <p class="highlight">
 One-time access: $24.99
 </p>
@@ -218,6 +230,40 @@ One-time access: $24.99
 <a class="btn" href="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
     Enroll Now — $24.99
 </a>
+
+<hr style="margin:20px 0; border:1px solid #333;">
+
+<!-- LEAD CAPTURE FORM -->
+<p><b>Or leave your details (we’ll send access info):</b></p>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form action="https://formsubmit.co/rg.salesnetwork@gmail.com"
+      method="POST"
+      target="hidden_iframe">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="🧬 New Longevity Challenge Lead">
+
+<label>First Name *</label>
+<input type="text" name="First Name" required>
+
+<label>Last Name *</label>
+<input type="text" name="Last Name" required>
+
+<label>Email *</label>
+<input type="email" name="Email" required>
+
+<label>Phone (optional)</label>
+<input type="tel" name="Phone">
+
+<label>Longevity Goals (optional)</label>
+<textarea name="Longevity Goals" placeholder="Energy, sleep, fat loss, anti-aging..."></textarea>
+
+<button class="btn" type="submit">Get Access Info</button>
+
+</form>
+
 </div>
 
 <!-- CONTACT SECTION -->
