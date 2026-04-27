@@ -114,10 +114,6 @@ input:focus, textarea:focus {
     gap: 10px;
 }
 
-.phone-row input {
-    margin: 8px 0 14px;
-}
-
 .phone-row .code {
     flex: 0 0 90px;
 }
@@ -126,7 +122,7 @@ input:focus, textarea:focus {
     flex: 1;
 }
 
-/* MOBILE STACK */
+/* MOBILE */
 @media (max-width: 600px) {
 
     .hero {
@@ -202,7 +198,7 @@ input:focus, textarea:focus {
 </ul>
 </div>
 
-<!-- FINAL FUNNEL -->
+<!-- FORM -->
 <div class="card" style="text-align:center;">
 
 <h2>🧬 Start Your Longevity Reset</h2>
@@ -211,17 +207,17 @@ input:focus, textarea:focus {
 
 <p><b>Enter your details to continue to payment:</b></p>
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
 <form 
   action="https://formsubmit.co/rg.salesnetwork@gmail.com"
   method="POST"
-  target="hidden_iframe"
-  onsubmit="redirectToPay()"
 >
 
+<!-- FORMSETTINGS -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="🧬 New Longevity Funnel Lead">
+
+<!-- SAFE REDIRECT (AFTER EMAIL SENT) -->
+<input type="hidden" name="_next" value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
 
 <label>First Name *</label>
 <input type="text" name="First Name" required>
@@ -232,7 +228,6 @@ input:focus, textarea:focus {
 <label>Last Name (optional)</label>
 <input type="text" name="Last Name">
 
-<!-- PHONE ROW (UPDATED) -->
 <label>Phone (optional)</label>
 
 <div class="phone-row">
@@ -278,14 +273,6 @@ input:focus, textarea:focus {
 <div class="footer">
 © 2026 Pro Longevity. All rights reserved.
 </div>
-
-<script>
-function redirectToPay() {
-    setTimeout(function () {
-        window.location.href = "https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ";
-    }, 700);
-}
-</script>
 
 </body>
 </html>
