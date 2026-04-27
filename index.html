@@ -108,13 +108,25 @@ input:focus, textarea:focus {
     border-color: #7CFFB2;
 }
 
-/* CONTACT */
-.contact {
-    text-align: center;
-    border: 1px solid #7CFFB2;
+/* PHONE ROW */
+.phone-row {
+    display: flex;
+    gap: 10px;
 }
 
-/* MOBILE */
+.phone-row input {
+    margin: 8px 0 14px;
+}
+
+.phone-row .code {
+    flex: 0 0 90px;
+}
+
+.phone-row .number {
+    flex: 1;
+}
+
+/* MOBILE STACK */
 @media (max-width: 600px) {
 
     .hero {
@@ -125,6 +137,14 @@ input:focus, textarea:focus {
 
     .container {
         padding: 12px;
+    }
+
+    .phone-row {
+        flex-direction: column;
+    }
+
+    .phone-row .code {
+        width: 100%;
     }
 }
 </style>
@@ -212,12 +232,26 @@ input:focus, textarea:focus {
 <label>Last Name (optional)</label>
 <input type="text" name="Last Name">
 
-<!-- UPDATED PHONE STRUCTURE -->
-<label>Country Code (optional)</label>
-<input type="text" name="Country Code" placeholder="+1">
+<!-- PHONE ROW (UPDATED) -->
+<label>Phone (optional)</label>
 
-<label>Phone Number (optional)</label>
-<input type="tel" name="Phone Number" placeholder="1234567890">
+<div class="phone-row">
+
+    <input 
+        type="text" 
+        name="Country Code" 
+        class="code"
+        placeholder="+1"
+    >
+
+    <input 
+        type="tel" 
+        name="Phone Number" 
+        class="number"
+        placeholder="1234567890"
+    >
+
+</div>
 
 <label>Longevity Goals (optional)</label>
 <textarea name="Longevity Goals"></textarea>
