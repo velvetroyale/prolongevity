@@ -57,7 +57,9 @@ h1, h2, h3 {
     border-radius: 10px;
     margin-top: 18px;
     font-size: 16px;
-    min-width: 220px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
 }
 
 /* CARD */
@@ -90,16 +92,6 @@ h1, h2, h3 {
     padding: 30px;
 }
 
-/* CONTACT SECTION */
-.contact {
-    text-align: center;
-    border: 1px solid #7CFFB2;
-}
-
-.contact p {
-    margin: 6px 0;
-}
-
 /* FORM */
 input, textarea {
     width: 100%;
@@ -116,6 +108,12 @@ input:focus, textarea:focus {
     border-color: #7CFFB2;
 }
 
+/* CONTACT */
+.contact {
+    text-align: center;
+    border: 1px solid #7CFFB2;
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
 
@@ -123,19 +121,7 @@ input:focus, textarea:focus {
         padding: 40px 12px;
     }
 
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 16px;
-        font-size: 16px;
-    }
+    h1 { font-size: 24px; }
 
     .container {
         padding: 12px;
@@ -145,22 +131,6 @@ input:focus, textarea:focus {
 </head>
 
 <body>
-
-<div style="text-align:center; margin-bottom:15px; font-weight:bold;">
-
-    🌍 Language:&nbsp;
-
-    <a href="https://velvetroyale.github.io/prolongevity/" 
-       style="color:#7CFFB2; text-decoration:none; margin-right:15px;">
-       🇬🇧 English
-    </a>
-
-    <a href="https://velvetroyale.github.io/prolongevity/ro.html" 
-       style="color:#7CFFB2; text-decoration:none;">
-       🇷🇴 Română
-    </a>
-
-</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -174,9 +144,6 @@ input:focus, textarea:focus {
     “Aging is a disease. And it’s treatable.” — Dr. David Sinclair
     </p>
 
-    <a class="btn" href="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
-        Enroll Now — $24.99
-    </a>
 </div>
 
 <div class="container">
@@ -190,105 +157,98 @@ input:focus, textarea:focus {
     </p>
 </div>
 
-<!-- DAILY BREAKDOWN -->
-<h2>📅 7-Day Email Program</h2>
+<!-- DAILY -->
+<h2>📅 7-Day Program</h2>
 
 <div class="grid">
-
-<div class="card"><h3>Day 1</h3><p>Longevity Lifestyle Assessment</p></div>
-<div class="card"><h3>Day 2</h3><p>Sleep Optimization Protocol</p></div>
-<div class="card"><h3>Day 3</h3><p>Anti-Aging Diet Strategy</p></div>
-<div class="card"><h3>Day 4</h3><p>Supplement & Cellular Support</p></div>
-<div class="card"><h3>Day 5</h3><p>Exercise for Longevity</p></div>
-<div class="card"><h3>Day 6</h3><p>Biomarker Checkup Guide</p></div>
-<div class="card"><h3>Day 7</h3><p>Long-Term Longevity Plan</p></div>
-
+<div class="card"><h3>Day 1</h3><p>Lifestyle Assessment</p></div>
+<div class="card"><h3>Day 2</h3><p>Sleep Optimization</p></div>
+<div class="card"><h3>Day 3</h3><p>Anti-Aging Diet</p></div>
+<div class="card"><h3>Day 4</h3><p>Supplements</p></div>
+<div class="card"><h3>Day 5</h3><p>Exercise</p></div>
+<div class="card"><h3>Day 6</h3><p>Biomarkers</p></div>
+<div class="card"><h3>Day 7</h3><p>Long-Term Plan</p></div>
 </div>
 
-<!-- VALUE STACK -->
-<h2>🧬 What You Get (Inside $24.99 Program)</h2>
-
+<!-- VALUE -->
 <div class="card">
+<h2>🧬 What You Get</h2>
 <ul>
-<li>✔ 7-Day Longevity Email Challenge</li>
-<li>✔ Complete Longevity eBook (PDF Guide Included)</li>
-<li>✔ Sleep, diet, exercise optimization system</li>
-<li>✔ Supplement timing protocols</li>
-<li>✔ Biomarker tracking introduction</li>
-<li>✔ Long-term longevity plan</li>
+<li>✔ 7-Day Email Challenge</li>
+<li>✔ Longevity eBook (PDF)</li>
+<li>✔ Sleep + Diet + Exercise System</li>
+<li>✔ Supplement Timing Guide</li>
+<li>✔ Long-Term Plan</li>
 </ul>
 </div>
 
-<!-- FINAL CTA -->
+<!-- FINAL FUNNEL -->
 <div class="card" style="text-align:center;">
-<h2>🧬 Start Your 7-Day Longevity Reset</h2>
 
-<p class="highlight">
-One-time access: $24.99
-</p>
+<h2>🧬 Start Your Longevity Reset</h2>
 
-<a class="btn" href="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
-    Enroll Now — $24.99
-</a>
+<p class="highlight">One-time access: $24.99</p>
 
-<hr style="margin:20px 0; border:1px solid #333;">
-
-<!-- LEAD CAPTURE FORM -->
-<p><b>Or leave your details (we’ll send access info):</b></p>
+<p><b>Enter your details to continue to payment:</b></p>
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-<form action="https://formsubmit.co/rg.salesnetwork@gmail.com"
-      method="POST"
-      target="hidden_iframe">
+<form 
+  action="https://formsubmit.co/rg.salesnetwork@gmail.com"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="redirectToPay()"
+>
 
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="🧬 New Longevity Challenge Lead">
+<input type="hidden" name="_subject" value="🧬 New Longevity Funnel Lead">
 
 <label>First Name *</label>
 <input type="text" name="First Name" required>
 
-<label>Last Name *</label>
-<input type="text" name="Last Name" required>
-
 <label>Email *</label>
 <input type="email" name="Email" required>
+
+<label>Last Name (optional)</label>
+<input type="text" name="Last Name">
 
 <label>Phone (optional)</label>
 <input type="tel" name="Phone">
 
 <label>Longevity Goals (optional)</label>
-<textarea name="Longevity Goals" placeholder="Energy, sleep, fat loss, anti-aging..."></textarea>
+<textarea name="Longevity Goals"></textarea>
 
-<button class="btn" type="submit">Get Access Info</button>
+<button class="btn" type="submit">
+    Continue to Payment
+</button>
 
 </form>
 
 </div>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <div class="container">
     <div class="card contact">
-
         <h2>📞 Contact</h2>
-
         <p><b>Michael M.D.</b></p>
-        <p><b>Pro Longevity</b></p>
-
-        <br>
-
         <p>Email: rg.salesnetwork@gmail.com</p>
         <p>Text: +1-619-967-2364</p>
-
     </div>
 </div>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
 © 2026 Pro Longevity. All rights reserved.
 </div>
+
+<script>
+function redirectToPay() {
+    setTimeout(function () {
+        window.location.href = "https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ";
+    }, 700);
+}
+</script>
 
 </body>
 </html>
