@@ -378,7 +378,22 @@ textarea:focus {
     }
 
 }
+.brand-logo {
+    display: block;
+    margin: 30px auto;
+    width: 180px;
+    max-width: 60%;
+    height: auto;
+    opacity: 0.9;
+}
 
+/* MOBILE */
+@media (max-width: 600px) {
+    .brand-logo {
+        width: 120px;
+        max-width: 50%;
+    }
+}
 </style>
 </head>
 
@@ -708,7 +723,11 @@ One-time access: $24.99
 </div>
 
 </div>
- <img src="https://velvetroyale.github.io/prolongevity/prolongevity.png" alt="Pro Longevity Logo">
+<img 
+    src="https://velvetroyale.github.io/prolongevity/prolongevity.png" 
+    alt="Pro Longevity Logo"
+    class="brand-logo"
+/>
 <div class="footer">
 © 2026 Pro Longevity. All rights reserved.
 </div>
