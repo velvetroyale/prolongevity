@@ -776,6 +776,20 @@ const timer = setInterval(function() {
 
 }, 1000);
 
+
+/* FORM → PAYPAL REDIRECT */
+
+document.querySelector("form").addEventListener("submit", function () {
+
+    setTimeout(function () {
+
+        window.location.href =
+        "https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ";
+
+    }, 1200);
+
+});
+
 </script>
 
 </body>
