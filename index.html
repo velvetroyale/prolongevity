@@ -6,8 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -20,80 +25,274 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 16px;
 }
 
+/* TRUST BAR */
+.trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px;
+    background: #111;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+    color: #7CFFB2;
+}
+
 /* HERO */
 .hero {
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    padding: 60px 16px;
-    background: linear-gradient(135deg, #111, #1f2a22);
+    padding: 80px 20px;
+    background:
+    radial-gradient(circle at top, rgba(124,255,178,0.15), transparent 40%),
+    linear-gradient(135deg, #0b0b0b, #132018);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+    linear-gradient(to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.65));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: auto;
 }
 
 .hero img {
     width: 100%;
-    max-width: 520px;
+    max-width: 240px;
     height: auto;
-    margin-bottom: 25px;
-    border-radius: 18px;
-    box-shadow: 0 12px 45px rgba(124, 255, 178, 0.15);
+    margin-bottom: 28px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(124,255,178,0.18);
 }
 
-h1, h2, h3 {
+.badge {
+    display: inline-block;
+    background: rgba(124,255,178,0.12);
+    border: 1px solid rgba(124,255,178,0.3);
     color: #7CFFB2;
-    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #7CFFB2;
+}
+
+.subheadline {
+    font-size: 20px;
+    color: #cfcfcf;
+    max-width: 700px;
+    margin: auto auto 28px;
+}
+
+.hero-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.benefit {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #2e2e2e;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.quote {
+    opacity: 0.85;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.quote span {
+    color: #7CFFB2;
+    font-style: normal;
+}
+
+/* COUNTDOWN */
+.countdown-wrap {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 30px;
+}
+
+.countdown-box {
+    display: inline-block;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(124,255,178,0.25);
+    padding: 14px 22px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#countdown {
+    margin-top: 8px;
+    color: #7CFFB2;
+    font-size: 24px;
+}
+
+/* GUARANTEE */
+.guarantee {
+    margin-bottom: 25px;
+    background: rgba(124,255,178,0.08);
+    border: 1px solid rgba(124,255,178,0.25);
+    padding: 14px;
+    border-radius: 12px;
+    color: #7CFFB2;
+    font-weight: bold;
+}
+
+/* OFFER */
+.offer-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(124,255,178,0.2);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 30px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.price span {
+    color: #7CFFB2;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
-    padding: 16px 26px;
+    padding: 18px 28px;
     background: #7CFFB2;
     color: #000;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-top: 18px;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
     border: none;
     cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 10px 30px rgba(124,255,178,0.25);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.micro-text {
+    margin-top: 14px;
+    font-size: 13px;
+    opacity: 0.65;
 }
 
 /* CARD */
 .card {
     background: #1a1a1a;
-    padding: 18px;
-    border-radius: 12px;
+    padding: 24px;
+    border-radius: 16px;
     border: 1px solid #333;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 14px;
 }
 
-/* HIGHLIGHT */
-.highlight {
+h1, h2, h3 {
+    color: #7CFFB2;
+}
+
+/* BEFORE AFTER */
+.ba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.ba-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+/* TESTIMONIALS */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.testimonial {
+    background: #111;
+    border: 1px solid #2d2d2d;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.testimonial span {
     color: #7CFFB2;
     font-weight: bold;
 }
 
-/* FOOTER */
-.footer {
+/* TRUSTED */
+.trusted-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.trusted-box {
+    background: #111;
+    border: 1px solid #2b2b2b;
+    padding: 18px;
+    border-radius: 12px;
     text-align: center;
-    font-size: 12px;
-    opacity: 0.6;
-    padding: 30px;
+    font-weight: bold;
 }
 
 /* FORM */
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 12px;
     margin: 8px 0 14px;
@@ -104,11 +303,11 @@ input, textarea {
     outline: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #7CFFB2;
 }
 
-/* PHONE ROW */
 .phone-row {
     display: flex;
     gap: 10px;
@@ -122,17 +321,46 @@ input:focus, textarea:focus {
     flex: 1;
 }
 
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.6;
+    padding: 30px;
+}
+
 /* MOBILE */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .hero {
-        padding: 40px 12px;
+        padding: 60px 16px;
     }
 
-    h1 { font-size: 24px; }
+    .hero h1 {
+        font-size: 34px;
+    }
 
-    .container {
-        padding: 12px;
+    .subheadline {
+        font-size: 17px;
+    }
+
+    .hero-benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .price {
+        font-size: 24px;
     }
 
     .phone-row {
@@ -142,23 +370,103 @@ input:focus, textarea:focus {
     .phone-row .code {
         width: 100%;
     }
+
+    .trust-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- TRUST BAR -->
+<div class="trust-bar">
+
+    <div>🧬 Science-Based Protocols</div>
+    <div>🌎 Wellness Optimization</div>
+    <div>📚 Longevity Research Inspired</div>
+    <div>⚡ Beginner Friendly</div>
+
+</div>
+
 <!-- HERO -->
 <div class="hero">
 
-    <img src="prolongevity.png" alt="Pro Longevity Logo">
+    <div class="hero-overlay"></div>
 
-    <h1>🧬 7-Day Longevity Challenge</h1>
-    <p>Reverse Aging Decline Naturally — Science-Based Reset System</p>
+    <div class="countdown-wrap">
 
-    <p>
-    “Aging is a disease. And it’s treatable.” — Dr. David Sinclair
-    </p>
+        <div class="countdown-box">
+            ⏳ Limited-Time Launch Access Ends In:
+            <div id="countdown"></div>
+        </div>
+
+    </div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🧬 SCIENCE-BASED 7-DAY RESET PROGRAM
+        </div>
+<br>
+        <img src="https://velvetroyale.github.io/prolongevity/pro_longevity_new_round.png" alt="Pro Longevity Logo">
+
+        <h1>
+            Feel Younger, Sharper & More Energized
+            <span>In Just 7 Days</span>
+        </h1>
+
+        <p class="subheadline">
+            Discover science-backed longevity protocols designed to improve
+            energy, sleep, metabolism, focus, recovery, and healthy aging naturally.
+        </p>
+
+        <div class="hero-benefits">
+
+            <div class="benefit">✔ Better Sleep</div>
+            <div class="benefit">✔ More Energy</div>
+            <div class="benefit">✔ Improved Focus</div>
+            <div class="benefit">✔ Healthy Aging Support</div>
+
+        </div>
+
+        <p class="quote">
+            “Aging is a disease. And it’s treatable.”
+            <br>
+            <span>— Longevity Research Discussion</span>
+        </p>
+
+        <div class="guarantee">
+            🔒 7-Day Satisfaction Guarantee • Instant Digital Access
+        </div>
+
+        <div class="offer-box">
+
+            <div class="price">
+                One-Time Access:
+                <span>$24.99</span>
+            </div>
+
+            <p>
+                Includes 7-Day Email Challenge + Longevity PDF System
+            </p>
+
+        </div>
+
+        <a href="#signup" class="btn">
+            START THE 7-DAY RESET
+        </a>
+
+        <p class="micro-text">
+            Instant access • Beginner friendly • Science-backed
+        </p>
+
+    </div>
 
 </div>
 
@@ -166,44 +474,173 @@ input:focus, textarea:focus {
 
 <!-- WHAT IT IS -->
 <div class="card">
-    <h2>What Is The 7-Day Longevity Challenge?</h2>
+
+    <h2>🧬 What Is The 7-Day Longevity Challenge?</h2>
+
     <p>
-    A structured 7-day email-based transformation program designed to optimize your biology,
-    improve energy, sleep, metabolism, and support healthy aging using science-backed protocols.
+        A structured 7-day email-based transformation program designed to optimize your biology,
+        improve energy, sleep, metabolism, and support healthy aging using science-backed protocols.
     </p>
+
+</div>
+
+<!-- BEFORE AFTER -->
+<div class="card">
+
+    <h2>🧬 Real Lifestyle Transformation</h2>
+
+    <div class="ba-grid">
+
+        <div class="ba-box">
+
+            <h3>Before</h3>
+
+            <ul>
+                <li>Low daily energy</li>
+                <li>Poor sleep quality</li>
+                <li>Brain fog</li>
+                <li>Unhealthy habits</li>
+                <li>No structured wellness plan</li>
+            </ul>
+
+        </div>
+
+        <div class="ba-box">
+
+            <h3>After</h3>
+
+            <ul>
+                <li>Improved energy levels</li>
+                <li>Better recovery & sleep</li>
+                <li>More focus & clarity</li>
+                <li>Healthier longevity habits</li>
+                <li>Structured optimization system</li>
+            </ul>
+
+        </div>
+
+    </div>
+
 </div>
 
 <!-- DAILY -->
 <h2>📅 7-Day Program</h2>
 
 <div class="grid">
-<div class="card"><h3>Day 1</h3><p>Lifestyle Assessment</p></div>
-<div class="card"><h3>Day 2</h3><p>Sleep Optimization</p></div>
-<div class="card"><h3>Day 3</h3><p>Anti-Aging Diet</p></div>
-<div class="card"><h3>Day 4</h3><p>Supplements</p></div>
-<div class="card"><h3>Day 5</h3><p>Exercise</p></div>
-<div class="card"><h3>Day 6</h3><p>Biomarkers</p></div>
-<div class="card"><h3>Day 7</h3><p>Long-Term Plan</p></div>
+
+    <div class="card"><h3>Day 1</h3><p>Lifestyle Assessment</p></div>
+    <div class="card"><h3>Day 2</h3><p>Sleep Optimization</p></div>
+    <div class="card"><h3>Day 3</h3><p>Anti-Aging Diet</p></div>
+    <div class="card"><h3>Day 4</h3><p>Supplements</p></div>
+    <div class="card"><h3>Day 5</h3><p>Exercise</p></div>
+    <div class="card"><h3>Day 6</h3><p>Biomarkers</p></div>
+    <div class="card"><h3>Day 7</h3><p>Long-Term Plan</p></div>
+
 </div>
 
 <!-- VALUE -->
 <div class="card">
-<h2>🧬 What You Get</h2>
-<ul>
-<li>✔ 7-Day Email Challenge</li>
-<li>✔ Longevity eBook (PDF)</li>
-<li>✔ Sleep + Diet + Exercise System</li>
-<li>✔ Supplement Timing Guide</li>
-<li>✔ Long-Term Plan</li>
-</ul>
+
+    <h2>🧬 What You Get</h2>
+
+    <ul>
+        <li>✔ 7-Day Email Challenge</li>
+        <li>✔ Longevity eBook (PDF)</li>
+        <li>✔ Sleep + Diet + Exercise System</li>
+        <li>✔ Supplement Timing Guide</li>
+        <li>✔ Long-Term Wellness Plan</li>
+    </ul>
+
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="card">
+
+    <h2>⭐ What Participants Say</h2>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+            <p>
+            “By Day 4 my energy levels felt completely different.
+            The sleep optimization alone was worth it.”
+            </p>
+
+            <span>— Michael R.</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+            “Simple, actionable, and easy to follow.
+            I finally created healthy routines that stick.”
+            </p>
+
+            <span>— Jennifer L.</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+            “This helped me understand longevity in a practical,
+            easy-to-implement way.”
+            </p>
+
+            <span>— Daniel K.</span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TRUSTED -->
+<div class="card">
+
+    <h2>🧬 Inspired By Modern Wellness Research</h2>
+
+    <div class="trusted-grid">
+
+        <div class="trusted-box">Sleep Science</div>
+        <div class="trusted-box">Metabolic Health</div>
+        <div class="trusted-box">Healthy Aging Research</div>
+        <div class="trusted-box">Lifestyle Optimization</div>
+
+    </div>
+
+</div>
+
+<!-- REFERENCES -->
+<div class="card references">
+
+    <h2>📚 Information Sources & Research Inspiration</h2>
+
+    <p>
+        This educational program is inspired by publicly available longevity,
+        sleep, nutrition, metabolic health, exercise, and healthy aging research
+        discussed by scientists, medical researchers, and wellness experts.
+    </p>
+
+    <ul>
+        <li>✔ Sleep optimization research</li>
+        <li>✔ Circadian rhythm studies</li>
+        <li>✔ Metabolic health & fasting protocols</li>
+        <li>✔ Exercise and healthy aging studies</li>
+        <li>✔ Nutrition and recovery research</li>
+        <li>✔ Lifestyle-based wellness optimization</li>
+    </ul>
+
+    <p style="opacity:0.7; font-size:14px; margin-top:20px;">
+        This program is for educational purposes only and is not medical advice.
+    </p>
+
 </div>
 
 <!-- FORM -->
-<div class="card" style="text-align:center;">
+<div class="card" id="signup" style="text-align:center;">
 
 <h2>🧬 Start Your Longevity Reset</h2>
 
-<p class="highlight">One-time access: $24.99</p>
+<p style="color:#7CFFB2; font-weight:bold;">
+One-time access: $24.99
+</p>
 
 <p><b>Enter your details to continue to payment:</b></p>
 
@@ -212,11 +649,10 @@ input:focus, textarea:focus {
   method="POST"
 >
 
-<!-- FORMSETTINGS -->
 <input type="hidden" name="_captcha" value="false">
+
 <input type="hidden" name="_subject" value="🧬 New Longevity Funnel Lead">
 
-<!-- SAFE REDIRECT (AFTER EMAIL SENT) -->
 <input type="hidden" name="_next" value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
 
 <label>First Name *</label>
@@ -249,6 +685,7 @@ input:focus, textarea:focus {
 </div>
 
 <label>Longevity Goals (optional)</label>
+
 <textarea name="Longevity Goals"></textarea>
 
 <button class="btn" type="submit">
@@ -260,19 +697,67 @@ input:focus, textarea:focus {
 </div>
 
 <!-- CONTACT -->
-<div class="container">
-    <div class="card contact">
-        <h2>📞 Contact</h2>
-        <p>Email: bestliving2025@gmail.com</p>
-        <p>Text: +1-619-967-2364</p>
-    </div>
-</div>
+<div class="card contact">
+
+    <h2>📞 Contact</h2>
+
+    <p>Email: bestliving2025@gmail.com</p>
+
+    <p>Text: +1-619-967-2364</p>
 
 </div>
 
+</div>
+ <img src="https://velvetroyale.github.io/prolongevity/prolongevity.png" alt="Pro Longevity Logo">
 <div class="footer">
 © 2026 Pro Longevity. All rights reserved.
 </div>
+
+<script>
+
+/* 48 HOUR COUNTDOWN */
+
+const countdown = document.getElementById("countdown");
+
+const endDate = new Date().getTime() + (48 * 60 * 60 * 1000);
+
+const timer = setInterval(function() {
+
+    const now = new Date().getTime();
+
+    const distance = endDate - now;
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    countdown.innerHTML =
+        hours + "h "
+        + minutes + "m "
+        + seconds + "s";
+
+    if (distance < 0) {
+
+        clearInterval(timer);
+
+        countdown.innerHTML = "Offer Expired";
+
+    }
+
+}, 1000);
+
+</script>
 
 </body>
 </html>
