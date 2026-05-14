@@ -400,12 +400,12 @@ textarea:focus {
 
   <input type="hidden" name="access_key" value="e092569b-da4e-40d5-8da1-f3e18c98eaf4">
 
+  <!-- ✅ REDIRECT FIX -->
+  <input type="hidden" name="redirect" value="https://velvetroyale.github.io/prolongevity/thanks1.html">
+
   <input type="hidden" name="subject" value="🧬 New 7-Day Reset Lead">
 
-  <!-- ✅ THIS IS THE REAL REDIRECT FIELD FOR WEB3FORMS -->
-  <input type="hidden" name="_next" value="https://velvetroyale.github.io/prolongevity/thanks1.html">
-
-  <input type="hidden" name="botcheck" style="display:none;">
+  <input type="checkbox" name="botcheck" style="display:none;">
 
   <label>First Name *</label>
   <input type="text" name="First Name" required>
@@ -419,8 +419,8 @@ textarea:focus {
   <label>Phone (optional)</label>
 
   <div class="phone-row">
-      <input type="text" name="Country Code" placeholder="+1">
-      <input type="tel" name="Phone Number" placeholder="1234567890">
+      <input type="text" name="Country Code" class="code" placeholder="+1">
+      <input type="tel" name="Phone Number" class="number" placeholder="1234567890">
   </div>
 
   <label>Goals (optional)</label>
@@ -431,6 +431,7 @@ textarea:focus {
   </button>
 
 </form>
+    
 </div>
 
 </div>
