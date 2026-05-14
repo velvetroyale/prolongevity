@@ -394,7 +394,7 @@ textarea:focus {
 
 <p><b>I want to start the 7-Day Reset</b></p>
 
-<p>Enter your details — we will contact you manually with access instructions.</p>
+<p>Enter your details — we will contact you by email with access instructions.</p>
 
 <form action="https://api.web3forms.com/submit" method="POST">
 
@@ -402,10 +402,10 @@ textarea:focus {
 
   <input type="hidden" name="subject" value="🧬 New 7-Day Reset Lead">
 
-  <!-- ✅ REDIRECT UPDATED -->
-  <input type="hidden" name="redirect" value="https://velvetroyale.github.io/prolongevity/thanks1.html">
+  <!-- ✅ THIS IS THE REAL REDIRECT FIELD FOR WEB3FORMS -->
+  <input type="hidden" name="_next" value="https://velvetroyale.github.io/prolongevity/thanks1.html">
 
-  <input type="checkbox" name="botcheck" style="display:none;">
+  <input type="hidden" name="botcheck" style="display:none;">
 
   <label>First Name *</label>
   <input type="text" name="First Name" required>
@@ -419,8 +419,8 @@ textarea:focus {
   <label>Phone (optional)</label>
 
   <div class="phone-row">
-      <input type="text" name="Country Code" class="code" placeholder="+1">
-      <input type="tel" name="Phone Number" class="number" placeholder="1234567890">
+      <input type="text" name="Country Code" placeholder="+1">
+      <input type="tel" name="Phone Number" placeholder="1234567890">
   </div>
 
   <label>Goals (optional)</label>
