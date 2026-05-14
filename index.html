@@ -660,15 +660,45 @@ One-time access: $24.99
 <p><b>Enter your details to continue to payment:</b></p>
 
 <form 
-  action="https://formsubmit.co/rg.salesnetwork@gmail.com"
+  action="https://api.web3forms.com/submit"
   method="POST"
 >
 
-<input type="hidden" name="_captcha" value="false">
+<!-- WEB3FORMS ACCESS KEY -->
+<input 
+    type="hidden" 
+    name="access_key" 
+    value="e092569b-da4e-40d5-8da1-f3e18c98eaf4"
+>
 
-<input type="hidden" name="_subject" value="🧬 New Longevity Funnel Lead">
+<!-- EMAIL SUBJECT -->
+<input 
+    type="hidden" 
+    name="subject" 
+    value="🧬 New Longevity Funnel Lead"
+>
 
-<input type="hidden" name="_next" value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
+<!-- REDIRECT TO PAYPAL -->
+<input 
+    type="hidden" 
+    name="redirect" 
+    value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ"
+>
+
+<!-- OPTIONAL -->
+<input 
+    type="hidden" 
+    name="from_name" 
+    value="Pro Longevity"
+>
+
+<!-- ANTI-SPAM -->
+<input 
+    type="checkbox" 
+    name="botcheck" 
+    class="hidden" 
+    style="display:none;"
+>
 
 <label>First Name *</label>
 <input type="text" name="First Name" required>
@@ -768,19 +798,6 @@ const timer = setInterval(function() {
 
 }, 1000);
 
-
-/* FORM → PAYPAL REDIRECT */
-
-document.querySelector("form").addEventListener("submit", function () {
-
-    setTimeout(function () {
-
-        window.location.href =
-        "https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ";
-
-    }, 1200);
-
-});
 
 </script>
 
