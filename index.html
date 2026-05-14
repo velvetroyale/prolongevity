@@ -659,86 +659,47 @@ One-time access: $24.99
 
 <p><b>Enter your details to continue to payment:</b></p>
 
-<form 
-  action="https://api.web3forms.com/submit"
-  method="POST"
->
+<form action="https://api.web3forms.com/submit" method="POST">
 
-<!-- WEB3FORMS ACCESS KEY -->
-<input 
-    type="hidden" 
-    name="access_key" 
-    value="e092569b-da4e-40d5-8da1-f3e18c98eaf4"
->
+  <!-- REQUIRED -->
+  <input type="hidden" name="access_key" value="e092569b-da4e-40d5-8da1-f3e18c98eaf4">
 
-<!-- EMAIL SUBJECT -->
-<input 
-    type="hidden" 
-    name="subject" 
-    value="🧬 New Longevity Funnel Lead"
->
+  <!-- EMAIL SUBJECT -->
+  <input type="hidden" name="subject" value="🧬 New Longevity Funnel Lead">
 
-<!-- REDIRECT TO PAYPAL -->
-<input 
-    type="hidden" 
-    name="redirect" 
-    value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ"
->
+  <!-- REDIRECT (THIS IS WHAT MAKES PAYPAL WORK) -->
+  <input type="hidden" name="redirect" value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
 
-<!-- OPTIONAL -->
-<input 
-    type="hidden" 
-    name="from_name" 
-    value="Pro Longevity"
->
+  <!-- OPTIONAL -->
+  <input type="hidden" name="from_name" value="Pro Longevity">
 
-<!-- ANTI-SPAM -->
-<input 
-    type="checkbox" 
-    name="botcheck" 
-    class="hidden" 
-    style="display:none;"
->
+  <!-- ANTI-SPAM (IMPORTANT: must stay empty) -->
+  <input type="checkbox" name="botcheck" style="display:none;">
 
-<label>First Name *</label>
-<input type="text" name="First Name" required>
+  <label>First Name *</label>
+  <input type="text" name="First Name" required>
 
-<label>Email *</label>
-<input type="email" name="Email" required>
+  <label>Email *</label>
+  <input type="email" name="Email" required>
 
-<label>Last Name (optional)</label>
-<input type="text" name="Last Name">
+  <label>Last Name (optional)</label>
+  <input type="text" name="Last Name">
 
-<label>Phone (optional)</label>
+  <label>Phone (optional)</label>
 
-<div class="phone-row">
+  <div class="phone-row">
+      <input type="text" name="Country Code" class="code" placeholder="+1">
+      <input type="tel" name="Phone Number" class="number" placeholder="1234567890">
+  </div>
 
-    <input 
-        type="text" 
-        name="Country Code" 
-        class="code"
-        placeholder="+1"
-    >
+  <label>Longevity Goals (optional)</label>
+  <textarea name="Longevity Goals"></textarea>
 
-    <input 
-        type="tel" 
-        name="Phone Number" 
-        class="number"
-        placeholder="1234567890"
-    >
-
-</div>
-
-<label>Longevity Goals (optional)</label>
-
-<textarea name="Longevity Goals"></textarea>
-
-<button class="btn" type="submit">
-    Continue to Payment
-</button>
+  <button class="btn" type="submit">
+      Continue to Payment
+  </button>
 
 </form>
-
 </div>
 
 <!-- CONTACT -->
