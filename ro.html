@@ -2,12 +2,17 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Provocarea de Longevitate 7 Zile</title>
+<title>Provocarea Longevitate de 7 Zile</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,64 +23,310 @@ body {
     line-height: 1.6;
 }
 
+/* CONTAINER */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 16px;
 }
 
+/* TRUST BAR */
+.trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px;
+    background: #111;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+    color: #7CFFB2;
+}
+
+/* HERO */
 .hero {
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    padding: 60px 16px;
-    background: linear-gradient(135deg, #111, #1f2a22);
+    padding: 80px 20px;
+    background:
+    radial-gradient(circle at top, rgba(124,255,178,0.15), transparent 40%),
+    linear-gradient(135deg, #0b0b0b, #132018);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+    linear-gradient(to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.65));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: auto;
 }
 
 .hero img {
     width: 100%;
-    max-width: 520px;
+    max-width: 240px;
     height: auto;
-    margin-bottom: 25px;
-    border-radius: 18px;
-    box-shadow: 0 12px 45px rgba(124, 255, 178, 0.15);
+    margin-bottom: 28px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(124,255,178,0.18);
 }
 
-h1, h2, h3 {
+.badge {
+    display: inline-block;
+    background: rgba(124,255,178,0.12);
+    border: 1px solid rgba(124,255,178,0.3);
     color: #7CFFB2;
-    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
 }
 
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    margin-bottom: 22px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #7CFFB2;
+}
+
+.subheadline {
+    font-size: 20px;
+    color: #cfcfcf;
+    max-width: 700px;
+    margin: auto auto 28px;
+}
+
+.hero-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.benefit {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #2e2e2e;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.quote {
+    opacity: 0.85;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.quote span {
+    color: #7CFFB2;
+    font-style: normal;
+}
+
+/* COUNTDOWN */
+.countdown-wrap {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 30px;
+}
+
+.countdown-box {
+    display: inline-block;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(124,255,178,0.25);
+    padding: 14px 22px;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#countdown {
+    margin-top: 8px;
+    color: #7CFFB2;
+    font-size: 24px;
+}
+
+/* GUARANTEE */
+.guarantee {
+    margin-bottom: 25px;
+    background: rgba(124,255,178,0.08);
+    border: 1px solid rgba(124,255,178,0.25);
+    padding: 14px;
+    border-radius: 12px;
+    color: #7CFFB2;
+    font-weight: bold;
+}
+
+/* OFFER */
+.offer-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(124,255,178,0.2);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 30px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.price span {
+    color: #7CFFB2;
+}
+
+/* BUTTON */
 .btn {
     display: inline-block;
-    padding: 16px 26px;
+    padding: 18px 28px;
     background: #7CFFB2;
     color: #000;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 14px;
     margin-top: 18px;
-    font-size: 16px;
-    min-width: 220px;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 10px 30px rgba(124,255,178,0.25);
 }
 
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.micro-text {
+    margin-top: 14px;
+    font-size: 13px;
+    opacity: 0.65;
+}
+
+/* CARD */
 .card {
     background: #1a1a1a;
-    padding: 18px;
-    border-radius: 12px;
+    padding: 24px;
+    border-radius: 16px;
     border: 1px solid #333;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 14px;
 }
 
-.highlight {
+h1, h2, h3 {
+    color: #7CFFB2;
+}
+
+/* BEFORE AFTER */
+.ba-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.ba-box {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+/* TESTIMONIALS */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.testimonial {
+    background: #111;
+    border: 1px solid #2d2d2d;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.testimonial span {
     color: #7CFFB2;
     font-weight: bold;
 }
 
+/* TRUSTED */
+.trusted-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.trusted-box {
+    background: #111;
+    border: 1px solid #2b2b2b;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* FORM */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 14px;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #7CFFB2;
+}
+
+.phone-row {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-row .code {
+    flex: 0 0 90px;
+}
+
+.phone-row .number {
+    flex: 1;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
     font-size: 12px;
@@ -83,151 +334,455 @@ h1, h2, h3 {
     padding: 30px;
 }
 
-.contact {
-    text-align: center;
-    border: 1px solid #7CFFB2;
-}
-
-@media (max-width: 600px) {
+/* MOBILE */
+@media (max-width: 768px) {
 
     .hero {
-        padding: 40px 12px;
+        padding: 60px 16px;
     }
 
-    h1 {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .subheadline {
+        font-size: 17px;
+    }
+
+    .hero-benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .price {
         font-size: 24px;
     }
 
-    h2 {
-        font-size: 20px;
+    .phone-row {
+        flex-direction: column;
     }
 
-    .btn {
+    .phone-row .code {
         width: 100%;
-        padding: 16px;
-        font-size: 16px;
     }
 
-    .container {
-        padding: 12px;
+    .trust-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+}
+.brand-logo {
+    display: block;
+    margin: 30px auto;
+    width: 600px;
+    max-width: 75%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .brand-logo {
+        width: 700px;
+        max-width: 75%;
     }
 }
 </style>
 </head>
 
 <body>
-<div style="text-align:center; margin-bottom:15px; font-weight:bold;">
 
-    🌍 Language:&nbsp;
+<!-- TRUST BAR -->
+<div class="trust-bar">
 
-    <a href="https://velvetroyale.github.io/prolongevity/" 
-       style="color:#7CFFB2; text-decoration:none; margin-right:15px;">
-       🇬🇧 English
-    </a>
-
-    <a href="https://velvetroyale.github.io/prolongevity/ro.html" 
-       style="color:#7CFFB2; text-decoration:none;">
-       🇷🇴 Română
-    </a>
+    <div>🧬 Protocoale Bazate pe Știință</div>
+    <div>🌎 Optimizarea Stării de Bine</div>
+    <div>📚 Inspirat din Cercetarea Longevității</div>
+    <div>⚡ Prietenos pentru Începători</div>
 
 </div>
+
 <!-- HERO -->
 <div class="hero">
 
-    <img src="prolongevity.png" alt="Pro Longevity Logo">
+    <div class="hero-overlay"></div>
 
-    <h1>🧬 Provocarea de Longevitate 7 Zile</h1>
-    <p>Inversează declinul îmbătrânirii în mod natural — sistem bazat pe știință</p>
+    <div class="countdown-wrap">
 
-    <p>
-    „Îmbătrânirea este o boală. Și este tratabilă.” — Dr. David Sinclair
-    </p>
+        <div class="countdown-box">
+            ⏳ Accesul de Lansare pe Timp Limitat Se Încheie În:
+            <div id="countdown"></div>
+        </div>
 
-    <a class="btn" href="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
-        Înscrie-te acum — $24.99
-    </a>
+    </div>
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🧬 PROGRAM DE RESETARE DE 7 ZILE BAZAT PE ȘTIINȚĂ
+        </div>
+<br>
+        <img src="https://velvetroyale.github.io/prolongevity/pro_longevity_new_round.png" alt="Logo Pro Longevity">
+
+        <h1>
+            Simte-te Mai Tânăr, Mai Clar Mental și Mai Energizat
+            <span>În Doar 7 Zile</span>
+        </h1>
+
+        <p class="subheadline">
+            Descoperă protocoale de longevitate susținute de știință concepute pentru a îmbunătăți
+            energia, somnul, metabolismul, concentrarea, recuperarea și îmbătrânirea sănătoasă în mod natural.
+        </p>
+
+        <div class="hero-benefits">
+
+            <div class="benefit">✔ Somn Mai Bun</div>
+            <div class="benefit">✔ Mai Multă Energie</div>
+            <div class="benefit">✔ Concentrare Îmbunătățită</div>
+            <div class="benefit">✔ Susținere pentru Îmbătrânire Sănătoasă</div>
+
+        </div>
+
+        <p class="quote">
+            „Îmbătrânirea este o boală. Și poate fi tratată.”
+            <br>
+            <span>— Discuție despre Cercetarea Longevității</span>
+        </p>
+
+        <div class="guarantee">
+            🔒 Garanție de Satisfacție 7 Zile • Acces Digital Instant
+        </div>
+
+        <div class="offer-box">
+
+            <div class="price">
+                Acces Unic:
+                <span>$24.99</span>
+            </div>
+
+            <p>
+                Include Provocarea pe Email de 7 Zile + Sistem PDF pentru Longevitate
+            </p>
+
+        </div>
+
+        <a href="#signup" class="btn">
+            ÎNCEPE RESETAREA DE 7 ZILE
+        </a>
+
+        <p class="micro-text">
+            Acces instant • Prietenos pentru începători • Bazat pe știință
+        </p>
+
+    </div>
+
 </div>
 
 <div class="container">
 
 <!-- WHAT IT IS -->
 <div class="card">
-    <h2>Ce este Provocarea Longevitate 7 Zile?</h2>
+
+    <h2>🧬 Ce Este Provocarea de Longevitate de 7 Zile?</h2>
+
     <p>
-    Un program structurat de 7 zile prin email, creat pentru a-ți optimiza biologia,
-    a îmbunătăți energia, somnul, metabolismul și sănătatea generală prin protocoale bazate pe știință.
+        Un program structurat de transformare pe bază de email timp de 7 zile, conceput pentru a-ți optimiza biologia,
+        a îmbunătăți energia, somnul, metabolismul și a susține îmbătrânirea sănătoasă folosind protocoale susținute de știință.
     </p>
+
 </div>
 
-<!-- DAILY BREAKDOWN -->
-<h2>📅 Program pe 7 Zile</h2>
+<!-- BEFORE AFTER -->
+<div class="card">
+
+    <h2>🧬 Transformare Reală a Stilului de Viață</h2>
+
+    <div class="ba-grid">
+
+        <div class="ba-box">
+
+            <h3>Înainte</h3>
+
+            <ul>
+                <li>Energie zilnică scăzută</li>
+                <li>Calitate slabă a somnului</li>
+                <li>Ceață mentală</li>
+                <li>Obiceiuri nesănătoase</li>
+                <li>Fără plan structurat de wellness</li>
+            </ul>
+
+        </div>
+
+        <div class="ba-box">
+
+            <h3>După</h3>
+
+            <ul>
+                <li>Niveluri de energie îmbunătățite</li>
+                <li>Recuperare și somn mai bune</li>
+                <li>Mai multă concentrare și claritate</li>
+                <li>Obiceiuri mai sănătoase pentru longevitate</li>
+                <li>Sistem structurat de optimizare</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DAILY -->
+<h2>📅 Programul de 7 Zile</h2>
 
 <div class="grid">
 
-<div class="card"><h3>Ziua 1</h3><p>Evaluarea stilului de viață</p></div>
-<div class="card"><h3>Ziua 2</h3><p>Optimizarea somnului</p></div>
-<div class="card"><h3>Ziua 3</h3><p>Strategie anti-îmbătrânire alimentară</p></div>
-<div class="card"><h3>Ziua 4</h3><p>Suplimente și suport celular</p></div>
-<div class="card"><h3>Ziua 5</h3><p>Exerciții pentru longevitate</p></div>
-<div class="card"><h3>Ziua 6</h3><p>Ghid de biomarkeri</p></div>
-<div class="card"><h3>Ziua 7</h3><p>Plan pe termen lung</p></div>
+    <div class="card"><h3>Ziua 1</h3><p>Evaluarea Stilului de Viață</p></div>
+    <div class="card"><h3>Ziua 2</h3><p>Optimizarea Somnului</p></div>
+    <div class="card"><h3>Ziua 3</h3><p>Dietă Anti-Îmbătrânire</p></div>
+    <div class="card"><h3>Ziua 4</h3><p>Suplimente</p></div>
+    <div class="card"><h3>Ziua 5</h3><p>Exerciții</p></div>
+    <div class="card"><h3>Ziua 6</h3><p>Biomarkeri</p></div>
+    <div class="card"><h3>Ziua 7</h3><p>Plan pe Termen Lung</p></div>
 
 </div>
 
-<!-- VALUE STACK -->
-<h2>🧬 Ce primești (pentru $24.99)</h2>
-
+<!-- VALUE -->
 <div class="card">
-<ul>
-<li>✔ Provocarea de 7 zile prin email</li>
-<li>✔ Ebook complet de Longevitate (PDF inclus)</li>
-<li>✔ Sistem de optimizare somn, dietă, exerciții</li>
-<li>✔ Protocoale de suplimente</li>
-<li>✔ Introducere în monitorizarea biomarkerilor</li>
-<li>✔ Plan de longevitate pe termen lung</li>
-</ul>
+
+    <h2>🧬 Ce Primești</h2>
+
+    <ul>
+        <li>✔ Provocare pe Email de 7 Zile</li>
+        <li>✔ eBook despre Longevitate (PDF)</li>
+        <li>✔ Sistem de Somn + Dietă + Exerciții</li>
+        <li>✔ Ghid pentru Programarea Suplimentelor</li>
+        <li>✔ Plan de Wellness pe Termen Lung</li>
+    </ul>
+
 </div>
 
-<!-- FINAL CTA -->
-<div class="card" style="text-align:center;">
-<h2>🧬 Începe Resetarea de Longevitate in 7 Zile</h2>
+<!-- TESTIMONIALS -->
+<div class="card">
 
-<p>
-Programu de longevitate complet + ebook PDF
-</p>
+    <h2>⭐ Ce Spun Participanții</h2>
 
-<p class="highlight">
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+            <p>
+            „Până în Ziua 4 nivelul meu de energie se simțea complet diferit.
+            Doar optimizarea somnului a meritat.”
+            </p>
+
+            <span>— Michael R.</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+            „Simplu, practic și ușor de urmat.
+            În sfârșit am creat rutine sănătoase care rezistă.”
+            </p>
+
+            <span>— Jennifer L.</span>
+        </div>
+
+        <div class="testimonial">
+            <p>
+            „Acest program m-a ajutat să înțeleg longevitatea într-un mod practic,
+            ușor de implementat.”
+            </p>
+
+            <span>— Daniel K.</span>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- TRUSTED -->
+<div class="card">
+
+    <h2>🧬 Inspirat de Cercetarea Modernă în Wellness</h2>
+
+    <div class="trusted-grid">
+
+        <div class="trusted-box">Știința Somnului</div>
+        <div class="trusted-box">Sănătate Metabolică</div>
+        <div class="trusted-box">Cercetare pentru Îmbătrânire Sănătoasă</div>
+        <div class="trusted-box">Optimizarea Stilului de Viață</div>
+
+    </div>
+
+</div>
+
+<!-- REFERENCES -->
+<div class="card references">
+
+    <h2>📚 Surse de Informații & Inspirație pentru Cercetare</h2>
+
+    <p>
+        Acest program educațional este inspirat de cercetări disponibile public despre longevitate,
+        somn, nutriție, sănătate metabolică, exerciții și îmbătrânire sănătoasă
+        discutate de oameni de știință, cercetători medicali și experți în wellness.
+    </p>
+
+    <ul>
+        <li>✔ Cercetare privind optimizarea somnului</li>
+        <li>✔ Studii despre ritmul circadian</li>
+        <li>✔ Protocoale pentru sănătate metabolică și post</li>
+        <li>✔ Studii despre exerciții și îmbătrânire sănătoasă</li>
+        <li>✔ Cercetare despre nutriție și recuperare</li>
+        <li>✔ Optimizarea wellness bazată pe stil de viață</li>
+    </ul>
+
+    <p style="opacity:0.7; font-size:14px; margin-top:20px;">
+        Acest program este doar în scop educațional și nu reprezintă sfat medical.
+    </p>
+
+</div>
+
+<!-- FORM -->
+<div class="card" id="signup" style="text-align:center;">
+
+<h2>🧬 Începe Resetarea Ta pentru Longevitate</h2>
+
+<p style="color:#7CFFB2; font-weight:bold;">
 Acces unic: $24.99
 </p>
 
-<a class="btn" href="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
-    Înscrie-te acum — $24.99
-</a>
+<p><b>Introdu detaliile tale pentru a continua către plată:</b></p>
+
+<form 
+  action="https://formsubmit.co/rg.salesnetwork@gmail.com"
+  method="POST"
+>
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject" value="🧬 Lead Nou pentru Funnelul de Longevitate">
+
+<input type="hidden" name="_next" value="https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ">
+
+<label>Prenume *</label>
+<input type="text" name="First Name" required>
+
+<label>Email *</label>
+<input type="email" name="Email" required>
+
+<label>Nume de Familie (opțional)</label>
+<input type="text" name="Last Name">
+
+<label>Telefon (opțional)</label>
+
+<div class="phone-row">
+
+    <input 
+        type="text" 
+        name="Country Code" 
+        class="code"
+        placeholder="+1"
+    >
+
+    <input 
+        type="tel" 
+        name="Phone Number" 
+        class="number"
+        placeholder="1234567890"
+    >
+
 </div>
+
+<label>Obiective de Longevitate (opțional)</label>
+
+<textarea name="Longevity Goals"></textarea>
+
+<button class="btn" type="submit">
+    Continuă către Plată
+</button>
+
+</form>
 
 </div>
 
 <!-- CONTACT -->
-<div class="container">
-    <div class="card contact">
 
-        <h2>📞 Contact</h2>
 
-        <p><b>Michael M.D.</b></p>
-        <p><b>Pro Longevity</b></p>
-
-        <br>
-
-        <p>Email: rg.salesnetwork@gmail.com</p>
-        <p>Text: +1-619-967-2364</p>
-
-    </div>
 </div>
-
-<!-- FOOTER -->
+<img 
+    src="https://velvetroyale.github.io/prolongevity/prolongevity.png" 
+    alt="Logo Pro Longevity"
+    class="brand-logo"
+/>
 <div class="footer">
 © 2026 Pro Longevity. Toate drepturile rezervate.
 </div>
+
+<script>
+
+/* COUNTDOWN DE 48 ORE */
+
+const countdown = document.getElementById("countdown");
+
+const endDate = new Date().getTime() + (48 * 60 * 60 * 1000);
+
+const timer = setInterval(function() {
+
+    const now = new Date().getTime();
+
+    const distance = endDate - now;
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
+
+    countdown.innerHTML =
+        hours + "h "
+        + minutes + "m "
+        + seconds + "s";
+
+    if (distance < 0) {
+
+        clearInterval(timer);
+
+        countdown.innerHTML = "Oferta a Expirat";
+
+    }
+
+}, 1000);
+
+
+/* FORMULAR → REDIRECȚIONARE PAYPAL */
+
+document.querySelector("form").addEventListener("submit", function () {
+
+    setTimeout(function () {
+
+        window.location.href =
+        "https://www.paypal.com/ncp/payment/S59RCY2DQSPTQ";
+
+    }, 1200);
+
+});
+
+</script>
 
 </body>
 </html>
