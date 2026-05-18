@@ -345,21 +345,6 @@ textarea:focus {
 <!-- HERO -->
 <div class="hero">
 
-    <div class="hero-overlay"></div>
-
-    <div class="countdown-wrap">
-        <div class="countdown-box">
-            ⏳ Founding Member Access Ends In:
-            <div id="countdown"></div>
-        </div>
-    </div>
-
-    <div class="hero-content">
-
-        <div class="badge">
-            ⚡ LIMITED FOUNDING MEMBER ACCESS
-        </div>
-
         <br>
 
         <img src="https://velvetroyale.github.io/prolongevity/pro_longevity_new_round.png" alt="Pro Longevity Logo">
@@ -629,31 +614,6 @@ No complicated setup • Instant digital access
 <div class="footer">
 © 2026 Pro Longevity. All rights reserved.
 </div>
-
-<script>
-
-const countdown = document.getElementById("countdown");
-
-const endDate = new Date().getTime() + (48 * 60 * 60 * 1000);
-
-setInterval(function () {
-
-    const now = new Date().getTime();
-
-    const distance = endDate - now;
-
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-        hours + "h " + minutes + "m " + seconds + "s";
-
-}, 1000);
-
-</script>
 
 </body>
 </html>
