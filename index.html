@@ -722,69 +722,130 @@ textarea:focus {
         and Wellness Optimization Framework.
     </p>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
+<style>
+    form{
+        display:flex;
+        flex-direction:column;
+    }
 
-        <input type="hidden" name="access_key" value="e092569b-da4e-40d5-8da1-f3e18c98eaf4">
-        <input type="hidden" name="redirect" value="https://velvetroyale.github.io/prolongevity/thanks.html">
-        <input type="hidden" name="subject" value="New Longevity Reset Registration">
-        <input type="hidden" name="from_name" value="Pro Longevity">
+    label{
+        display:block;
+        margin-top:18px;
+        margin-bottom:8px;
+        font-weight:600;
+    }
 
-        <input type="checkbox" name="botcheck" style="display:none;">
+    input, select{
+        width:100%;
+        padding:16px;
+        background:#111;
+        border:1px solid rgba(255,255,255,0.08);
+        border-radius:14px;
+        color:white;
+        font-size:1rem;
+        font-family:inherit;
+        appearance:none;
+    }
 
-        <label>First Name *</label>
-        <input type="text" name="First Name" required>
+    input:focus,
+    select:focus{
+        outline:none;
+        border-color:#D4AF37;
+    }
 
-        <label>Email Address *</label>
-        <input type="email" name="Email" required>
+    select option{
+        background:#111;
+        color:white;
+    }
 
-        <label>Age Range *</label>
-        <select name="Age Range" required>
-            <option value="">Select One</option>
-            <option>18-34</option>
-            <option>35-44</option>
-            <option>45-54</option>
-            <option>55-64</option>
-            <option>65+</option>
-        </select>
+    .benefits{
+        margin-top:25px;
+        text-align:center;
+    }
 
-        <label>Primary Wellness Goal *</label>
-        <select name="Primary Goal" required>
-            <option value="">Select One</option>
-            <option>More Energy</option>
-            <option>Better Sleep</option>
-            <option>Weight Management</option>
-            <option>Healthy Aging</option>
-            <option>Improve Biomarkers</option>
-            <option>Reduce Stress</option>
-            <option>Increase Fitness</option>
-            <option>Overall Wellness</option>
-        </select>
+    .benefit{
+        display:block;
+        margin:8px 0;
+        font-size:0.95rem;
+    }
 
+    .btn-wrap{
+        text-align:center;
+        margin-top:30px;
+    }
+
+    button{
+        padding:18px 28px;
+        background:#D4AF37;
+        color:black;
+        border:none;
+        border-radius:999px;
+        font-weight:700;
+        font-size:1rem;
+        cursor:pointer;
+        transition:0.3s;
+        display:inline-block;
+    }
+
+    button:hover{
+        transform:translateY(-2px);
+    }
+</style>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="e092569b-da4e-40d5-8da1-f3e18c98eaf4">
+    <input type="hidden" name="redirect" value="https://velvetroyale.github.io/prolongevity/thanks.html">
+    <input type="hidden" name="subject" value="New Longevity Reset Registration">
+    <input type="hidden" name="from_name" value="Pro Longevity">
+
+    <input type="checkbox" name="botcheck" style="display:none;">
+
+    <label>First Name *</label>
+    <input type="text" name="First Name" required>
+
+    <label>Email Address *</label>
+    <input type="email" name="Email" required>
+
+    <label>Age Range *</label>
+    <select name="Age Range" required>
+        <option value="">Select One</option>
+        <option>18-34</option>
+        <option>35-44</option>
+        <option>45-54</option>
+        <option>55-64</option>
+        <option>65+</option>
+    </select>
+
+    <label>Primary Wellness Goal *</label>
+    <select name="Primary Goal" required>
+        <option value="">Select One</option>
+        <option>More Energy</option>
+        <option>Better Sleep</option>
+        <option>Weight Management</option>
+        <option>Healthy Aging</option>
+        <option>Improve Biomarkers</option>
+        <option>Reduce Stress</option>
+        <option>Increase Fitness</option>
+        <option>Overall Wellness</option>
+    </select>
+
+    <div class="btn-wrap">
         <button type="submit">
-            🚀 Request Your Longevity Plan
+            Request Your Longevity Plan
         </button>
+    </div>
 
-        <div class="benefits">
+    <div class="benefits">
 
-            <div class="benefit">
-                ✔ 7-Day Guided Reset
-            </div>
+        <div class="benefit">✔ 7-Day Guided Reset</div>
+        <div class="benefit">✔ Longevity Blueprint PDF</div>
+        <div class="benefit">✔ Sleep & Recovery Protocol</div>
+        <div class="benefit">✔ Wellness Optimization Framework</div>
 
-            <div class="benefit">
-                ✔ Longevity Blueprint PDF
-            </div>
+    </div>
 
-            <div class="benefit">
-                ✔ Sleep & Recovery Protocol
-            </div>
-
-            <div class="benefit">
-                ✔ Wellness Optimization Framework
-            </div>
-
-        </div>
-
-    </form>
+</form>
 
 </div>
 
